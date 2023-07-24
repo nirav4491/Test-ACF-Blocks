@@ -176,3 +176,25 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+add_action('acf/init', 'sonho_register_blocks');
+function sonho_register_blocks() {
+
+    // chebck function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a testimonial block.
+        acf_register_block_type(
+			array(
+				'name'              => 'banner',
+				'title'             => __('Banner'),
+				'description'       => __('A custom banner block.'),
+				'render_template'   => 'template-parts/blocks/banner/banner.php',
+				'category'          => 'formatting',
+				'icon'              => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
+				'enqueue_style'     => get_template_directory_uri() . '/template-parts/blocks/banner/banner.css',
+				'enqueue_script'    => get_template_directory_uri() . '/template-parts/blocks/banner/banner.js',
+			)
+		);
+    }
+}
+
