@@ -195,15 +195,14 @@ function sonho_enqueue_scripts() {
 		'all'
 	);
 }
-add_action( 'wp_')
+add_action( 'wp_enqueue_scripts', 'sonho_enqueue_scripts', 20 );
 
-add_action('acf/init', 'sonho_register_blocks');
+add_action( 'acf/init', 'sonho_register_blocks' );
 function sonho_register_blocks() {
-
     // chebck function exists.
-    if( function_exists('acf_register_block_type') ) {
+    if ( function_exists('acf_register_block_type') ) {
 
-        // register a testimonial block.
+		// register a testimonial block.
         acf_register_block_type(
 			array(
 				'name'              => 'banner',
