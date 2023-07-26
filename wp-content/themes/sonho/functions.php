@@ -176,6 +176,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Function for enqueue styles and scripts.
+ */
+function sonho_enqueue_scripts() {
+	wp_enqueue_style(
+		'header-style',
+		get_template_directory_uri() . '/assets/css/header.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/header.css' ),
+		'all'
+	);
+	wp_enqueue_style(
+		'banner-style',
+		get_template_directory_uri() . '/assets/css/banner.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/banner.css' ),
+		'all'
+	);
+}
+add_action( 'wp_')
+
 add_action('acf/init', 'sonho_register_blocks');
 function sonho_register_blocks() {
 

@@ -1,0 +1,161 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+/* Fonts Related CSS */
+@mixin font ($size: '', $weight: '', $style: '', $line-height: '', $color: '', $decoration: '') {
+	@if $size != '' {
+		font-size: $size;
+	}
+
+	@if $weight != '' {
+		font-weight: $weight;
+	}
+
+	@if $style != '' {
+		font-style: $style;
+	}
+
+	@if $line-height != '' {
+		line-height: $line-height;
+	}
+
+	@if $color != '' {
+		color: $color;
+	}
+
+	@if $decoration != '' {
+		text-decoration: $decoration;
+	}
+}
+
+/* Flex CSS */
+@mixin flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@mixin flex-align ($justify: '', $align: '', $direction: '', $gap: '') {
+	@if $justify != '' {
+		justify-content: $justify;
+	}
+	@if $align != '' {
+		align-items: $align;
+	}
+	@if $direction != '' {
+		flex-direction: $direction;
+	}
+	@if $gap != '' {
+		gap: $gap;
+	}
+}
+
+@mixin flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* padding & Margin CSS */
+@mixin padd_mar ($pt: '', $pb: '', $pl: '', $pr: '', $mt: '', $mb: '', $ml: '', $mr: '') {
+	@if $pt != '' {
+		padding-top: $pt;
+	}
+
+	@if $pb != '' {
+		padding-bottom: $pb;
+	}
+
+	@if $pl != '' {
+		padding-left: $pl;
+	}
+
+	@if $pr != '' {
+		padding-right: $pr;
+	}
+
+	@if $mt != '' {
+		margin-top: $mt;
+	}
+
+	@if $mb != '' {
+		margin-bottom: $mb;
+	}
+
+	@if $ml != '' {
+		margin-left: $ml;
+	}
+
+	@if $mr != '' {
+		margin-right: $mr;
+	}
+}
+
+/* Button CSS */
+@mixin button {
+	@include font ($size: 16px, $weight: 500, $color: #fff !important, $decoration: none);
+	@include padd_mar($pt: 12px, $pb: 12px, $pl: 50px, $pr: 50px);
+	background-color: #030303;
+	border: 1px solid #030303;
+	border-radius: 100px;
+	display: inline-block;
+}
+
+/* Width & Max-width CSS */
+@mixin width ($width: '', $max-width: '') {
+	@if $width != '' {
+		width: $width;
+	}
+
+	@if $max-width != '' {
+		max-width: $max-width;
+	}
+}
+
+/* Background CSS */
+@mixin background ($color: '', $image: '', $position: '', $repeat: '', $size: '') {
+	@if $color != '' {
+		background-color: $color;
+	}
+
+	@if $image != '' {
+		background-image: url($image);
+	}
+
+	@if $position != '' {
+		background-position: $position;
+	}
+
+	@if $repeat != '' {
+		background-repeat: $repeat;
+	}
+
+	@if $size != '' {
+		background-size: $size;
+	}
+}
+
+/* Element CSS */
+body {
+	font-family: 'IBM Plex Sans', sans-serif !important;
+	font-size: 16px;
+	overflow-x: hidden;
+	margin-bottom: 0 !important;
+}
+
+.container {
+	max-width: 1310px;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	.row {
+		@include flex;
+	}
+}
+
+.btn {
+	@include button;
+}
+
+.btn:hover {
+	background-color: transparent;
+	color: #030303 !important;
+}

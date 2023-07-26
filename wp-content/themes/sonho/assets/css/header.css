@@ -1,0 +1,229 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+/* Fonts Related CSS */
+/* Flex CSS */
+/* padding & Margin CSS */
+/* Button CSS */
+/* Width & Max-width CSS */
+/* Background CSS */
+/* Element CSS */
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #030303;
+  border: 1px solid #030303;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #030303 !important;
+}
+
+header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* header Left Part CSS */
+  /* header Right Part CSS */
+}
+header .row {
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+header .header_left_part,
+header .header_right_part,
+header .header_right_part ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+header .header_left_part {
+  gap: 95px;
+  width: 100%;
+  max-width: calc(100% - 336px);
+  /* Header Logo CSS */
+  /* Header Navigation CSS */
+}
+@media only screen and (max-width: 991px) {
+  header .header_left_part {
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  header .header_left_part {
+    max-width: 100%;
+    justify-content: space-between;
+  }
+}
+header .header_left_part .header_logo {
+  width: 100%;
+  max-width: 125px;
+}
+header .header_left_part .header_nav {
+  width: 100%;
+  max-width: calc(100% - 220px);
+}
+header .header_left_part .header_nav ul {
+  gap: 50px;
+}
+@media only screen and (max-width: 991px) {
+  header .header_left_part .header_nav ul {
+    gap: 30px;
+  }
+}
+header .header_left_part .header_nav ul li {
+  /* Dropdown Menu */
+}
+header .header_left_part .header_nav ul li a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #030303;
+  text-decoration: none;
+}
+header .header_left_part .header_nav ul li.menu-item-has-children {
+  /* Submenu */
+}
+header .header_left_part .header_nav ul li.menu-item-has-children > a {
+  padding-right: 15px;
+  background-image: url("/wp-content/themes/sonho/assets/images/SVG/down_arrow_dropdown.svg");
+  background-position: top 10px right;
+  background-repeat: no-repeat;
+  background-size: 10px;
+}
+header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu {
+  width: 200px;
+  flex-wrap: wrap;
+  gap: 0px;
+  border: 1px solid #878787;
+  border-radius: 10px;
+  overflow: hidden;
+}
+header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li {
+  width: 100%;
+}
+header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid #878787;
+}
+header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li:last-of-type a {
+  border-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+  header .header_left_part .header_nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+@media only screen and (max-width: 599px) {
+  header .header_left_part .header_nav button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  header .header_left_part .header_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0;
+    width: 160px;
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    border: 1px solid transparent;
+    height: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+  header .header_left_part .header_nav ul li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  header .header_left_part .header_nav ul li.menu-item-has-children > a {
+    background-position: center right 15px;
+  }
+  header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu {
+    width: 100%;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    top: initial;
+    right: initial;
+    border: none;
+    box-shadow: none;
+    transition: height 0.3s ease-in-out;
+  }
+  header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li a {
+    border: none;
+  }
+  header .header_left_part .header_nav ul li.menu-item-has-children.focus ul.sub-menu {
+    height: 90px;
+  }
+  header .header_left_part .header_nav.toggled ul {
+    height: auto;
+    border: 1px solid #878787;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+header .header_right_part {
+  justify-content: flex-end;
+  gap: 45px;
+  width: 100%;
+  max-width: 306px;
+  /* header Lang Selector CSS */
+}
+@media only screen and (max-width: 767px) {
+  header .header_right_part {
+    display: none;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header .header_right_part {
+    gap: 30px;
+  }
+}
+header .header_right_part .header_lang_selector .lang_selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+header .header_right_part .header_lang_selector .lang_selector .lang_text .text {
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=header.css.map */

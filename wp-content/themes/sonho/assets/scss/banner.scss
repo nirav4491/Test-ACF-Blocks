@@ -1,0 +1,74 @@
+@use "global";
+
+/* Banner CSS */
+.banner {
+	@include global.padd_mar($pt: 90px, $pb: 212px);
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-color: #030303;
+
+	@media only screen and (max-width: 1024px) {
+		background-position: left bottom;
+		@include global.padd_mar($pt: 50px, $pb: 125px);
+	}
+
+	.banner_text {
+		@include global.flex;
+		@include global.flex-align($direction: column);
+		h1 {
+			@include global.padd_mar($mt: 0, $mb:25px);
+			@include global.font($size: 52px, $weight: 600, $color: #fff,$line-height: 52px);
+			@include global.width($max-width: 630px, $width: 100%);
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($mb:15px);
+				@include global.font($size: 35px,$line-height: 35px);
+			}
+
+		}
+
+		p {
+			@include global.padd_mar($mt: 0, $mb:40px);
+			@include global.width($max-width: 630px, $width: 100%);
+			@include global.font($size: 18px, $color: #fff);
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($mb:35px);
+			}
+
+		}
+
+		.banner_button {
+			@include global.flex;
+			@include global.flex-align($align: center, $gap: 25px);
+
+			@media only screen and (max-width: 599px) {
+				@include global.flex-align($direction: column, $justify: center);
+			}
+
+			a {
+				color: #999999;
+				text-decoration: none;
+
+				@media only screen and (max-width: 599px) {
+					@include global.width($width: 100%, $max-width: 100%);
+					text-align: center;
+				}
+
+			}
+
+			a.btn {
+				background-color: #2A63E2;
+				border-color: #2A63E2;
+				color: #fff;
+				@include global.padd_mar($pl: 30px, $pr: 30px);
+				&:hover {
+					background-color: transparent;
+					border-color: #fff;
+					color: #fff !important;
+				}
+			}
+		}
+	}
+}

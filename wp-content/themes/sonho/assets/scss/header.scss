@@ -1,0 +1,186 @@
+@use "global";
+
+header {
+	@include global.padd_mar($pt: 5px, $pb: 5px);
+	.row {
+		@include global.flex-align($align: center, $gap: 30px, $justify: space-between);
+	}
+
+	.header_left_part,
+	.header_right_part,
+	.header_right_part ul {
+		@include global.flex;
+		@include global.flex-align($align: center);
+	}
+
+	/* header Left Part CSS */
+	.header_left_part {
+		@include global.flex-align($gap: 95px);
+		@include global.width($width: 100%, $max-width: calc(100% - 336px));
+
+		@media only screen and (max-width: 991px) {
+			@include global.flex-align($gap: 30px);
+		}
+
+		@media only screen and (max-width: 767px) {
+			@include global.width($max-width: 100%);
+			@include global.flex-align($justify: space-between);
+		}
+
+		/* Header Logo CSS */
+		.header_logo {
+			@include global.width($width: 100%, $max-width: 125px);	
+		}
+
+		/* Header Navigation CSS */
+		.header_nav {
+			@include global.width($width: 100%, $max-width: calc(100% - 220px));
+
+			ul{
+				@include global.flex-align($gap: 50px);
+				
+				@media only screen and (max-width: 991px) {
+					@include global.flex-align($gap: 30px);
+				}
+
+				li {
+					a {
+						@include global.font($size: 16px, $weight: normal, $decoration: none, $color: #030303);
+					}
+
+					/* Dropdown Menu */
+					&.menu-item-has-children {
+						> a {
+							@include global.padd_mar($pr: 15px);
+							@include global.background($position: top 10px right, $repeat: no-repeat, $size: 10px, $image: '/wp-content/themes/sonho/assets/images/SVG/down_arrow_dropdown.svg');
+						}
+
+						/* Submenu */
+						ul.sub-menu {
+							width: 200px;
+							flex-wrap: wrap;
+							gap: 0px;
+							border: 1px solid #878787;
+							border-radius: 10px;
+							overflow: hidden;
+							li {
+								width: 100%;
+								a {
+									@include global.padd_mar($pt: 10px, $pb: 10px, $pl: 15px, $pr: 15px);
+									width: 100%;
+									display: inline-block;
+									border-bottom: 1px solid #878787;
+								}
+								&:last-of-type {
+									a {
+										border-bottom: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			@media only screen and (max-width: 767px) { 
+				@include global.flex;
+				@include global.flex-align($justify: flex-end);
+			}
+
+			@media only screen and (max-width: 599px) { 
+				button {
+					padding: 0;
+					border: none;
+					background-color: transparent;
+					border-radius: 0;
+				}
+				
+				ul {
+					@include global.flex;
+					@include global.flex-align($direction: column, $gap: 0);
+					width: 160px;
+					position: absolute;
+					right: 15px;
+					top: 40px;
+					border: 1px solid transparent;
+					height: 0;
+					border-radius: 10px;
+					overflow: hidden;
+					transition: height 0.3s ease-in-out;
+
+					li {
+						> a {
+							@include global.padd_mar($pt: 10px, $pb: 10px, $pl: 15px, $pr: 15px);
+						}
+
+						&.menu-item-has-children {
+							> a {
+								@include global.background($position: center right 15px);
+							}
+
+							ul.sub-menu {
+								width: 100%;
+								position: relative;
+								height: 0;
+								overflow: hidden;
+								top: initial;
+								right: initial;
+								border: none;
+								box-shadow: none;
+								transition: height 0.3s ease-in-out;
+								li {
+									a {
+										border: none;
+									}
+								}
+							}
+
+							&.focus {
+								ul.sub-menu {
+									height: 90px;
+								}
+							}
+						}
+					}
+				}
+
+				&.toggled {
+					ul {
+						height: auto;
+						border: 1px solid #878787;
+						box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+					}
+				}
+			}
+		}
+
+	}
+	
+	/* header Right Part CSS */
+	.header_right_part {
+		@include global.flex-align($gap: 45px,$justify: flex-end);
+		@include global.width($width: 100%, $max-width: 306px);
+
+		@media only screen and (max-width: 767px) {
+			display: none;
+		}
+
+		@media only screen and (max-width: 991px) {
+			@include global.flex-align($gap: 30px);
+		}
+
+		/* header Lang Selector CSS */
+		.header_lang_selector {
+			.lang_selector {
+				@include global.flex;
+				@include global.flex-align($align: center, $gap: 6px);
+				.lang_text {
+					.text {
+						@include global.font($weight: normal);
+					}
+				}
+			}
+		}
+	}
+}
+
