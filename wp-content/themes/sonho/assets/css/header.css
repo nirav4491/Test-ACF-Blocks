@@ -122,6 +122,7 @@ header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu {
   border: 1px solid #878787;
   border-radius: 10px;
   overflow: hidden;
+  background-color: #fff;
 }
 header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li {
   width: 100%;
