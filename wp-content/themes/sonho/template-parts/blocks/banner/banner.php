@@ -31,17 +31,27 @@ $sub_title   = get_field('sub_title') ? get_field('sub_title') : 'Sub Title';
 $cta         = get_field('call_to_action');
 $btn_text    = ( ! empty( $cta['title'] ) ) ? $cta['title'] : 'Call To Action';
 $btn_link    = ( ! empty( $cta['url'] ) ) ? $cta['url'] : '#';
-$link_target = $cta['target'] ? $cta['target'] : '_self';
-
+$link_target = ( ! empty( $cta['target'] ) ) ? $cta['target'] : '_self';
+$after_cta   = get_field( 'after_call_to_action_text' ) ? get_field( 'after_call_to_action_text' ) : '';
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <div class="banner" style="background:url(<?php echo esc_url( $bg_image[0] ); ?>) no-repeat center center">
-		<div class="banner-content">
-			<h2><?php echo esc_html( $title ); ?></h2>
-			<p><?php echo esc_html( $sub_title );?></p>
-			<div class="banner-cta">
-				<a href="<?php echo esc_attr( $btn_link ); ?>" class="btn btn-banner-cta" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $btn_text ); ?></a>
+<!-- Banner Section -->
+<section class="banner" style="background-image: url(<?php echo esc_url( $bg_image[0] ); ?>)">
+	<div class="container">
+		<div class="row">
+
+			<!-- Banner Text -->
+			<div class="banner_text">
+
+				<h1><?php echo esc_html( $title ); ?></h1>
+				<p><?php echo esc_html( $sub_title );?></p>
+				<div class="banner_button">
+					<a class="btn" href="<?php echo esc_attr( $btn_link ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $btn_text ); ?></a>
+					<a href="javascript:;"><?php echo esc_html( $after_cta ); ?></a>
+				</div>
+
+
 			</div>
+
 		</div>
-    </div>
-</div>
+	</div>
+</section>

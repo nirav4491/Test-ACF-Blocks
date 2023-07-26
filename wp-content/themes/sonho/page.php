@@ -15,27 +15,24 @@
 get_header();
 ?>
 
-	<!-- Banner Section -->
-	<section class="banner" style="background-image: url('/wp-content/themes/sonho/assets/images/Bannaer.jpg')">
-		<div class="container">
-			<div class="row">
+	<main id="primary" class="site-main">
 
-				<!-- Banner Text -->
-				<div class="banner_text">
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-					<h1>Excepcional branding, design e desenvolvimento web</h1>
-					<p>Criamos sites e serviços funcionais com foco no design, que permitem o crescimento e a geração de receita.</p>
-					<div class="banner_button">
-						<a class="btn" href="javascript:;">Obtenha a proposta em 12 horas</a>
-						<a href="javascript:;">* - geralmente em algumas horas</a>
-					</div>
+			get_template_part( 'template-parts/content', 'page' );
 
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-				</div>
+		endwhile; // End of the loop.
+		?>
 
-			</div>
-		</div>
-	</section>
+	</main><!-- #main -->
 
 <?php
+get_sidebar();
 get_footer();

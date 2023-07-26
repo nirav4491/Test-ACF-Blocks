@@ -197,24 +197,38 @@ function sonho_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sonho_enqueue_scripts', 20 );
 
-add_action( 'acf/init', 'sonho_register_blocks' );
-function sonho_register_blocks() {
-    // chebck function exists.
-    if ( function_exists('acf_register_block_type') ) {
+/**
+ * Function for enqueue styles and scripts.
+ */
+function sonho_admin_enqueue_scripts() {
+	wp_enqueue_style(
+		'banner-style',
+		get_template_directory_uri() . '/assets/css/banner.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/banner.css' ),
+		'all'
+	);
+}
+add_action( 'admin_enqueue_scripts', 'sonho_admin_enqueue_scripts', 20 );
 
+add_action( 'acf/init', 'sonho_register_blocks' );
+/**
+ * Function To register ACF block.
+ */
+function sonho_register_blocks() {
+	// chebck function exists.
+	if ( function_exists( 'acf_register_block_type' ) ) {
 		// register a testimonial block.
-        acf_register_block_type(
+		acf_register_block_type(
 			array(
-				'name'              => 'banner',
-				'title'             => __('Banner'),
-				'description'       => __('A custom banner block.'),
-				'render_template'   => 'template-parts/blocks/banner/banner.php',
-				'category'          => 'formatting',
-				'icon'              => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
-				'enqueue_style'     => get_template_directory_uri() . '/template-parts/blocks/banner/banner.css',
-				'enqueue_script'    => get_template_directory_uri() . '/template-parts/blocks/banner/banner.js',
+				'name'            => 'banner',
+				'title'           => __( 'Banner' ),
+				'description'     => __( 'A custom banner block.' ),
+				'render_template' => 'template-parts/blocks/banner/banner.php',
+				'category'        => 'formatting',
+				'icon'            => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z" /><path d="M19 13H5v-2h14v2z" /></svg>',
 			)
 		);
-    }
+	}
 }
 
