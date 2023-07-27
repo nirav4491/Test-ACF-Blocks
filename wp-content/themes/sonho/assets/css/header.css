@@ -65,7 +65,7 @@ header .header_right_part ul {
 header .header_left_part {
   gap: 95px;
   width: 100%;
-  max-width: calc(100% - 336px);
+  max-width: calc(100% - 450px);
   /* Header Logo CSS */
   /* Header Navigation CSS */
 }
@@ -122,7 +122,6 @@ header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu {
   border: 1px solid #878787;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #fff;
 }
 header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li {
   width: 100%;
@@ -204,7 +203,7 @@ header .header_right_part {
   justify-content: flex-end;
   gap: 45px;
   width: 100%;
-  max-width: 306px;
+  max-width: 400px;
   /* header Lang Selector CSS */
 }
 @media only screen and (max-width: 767px) {
