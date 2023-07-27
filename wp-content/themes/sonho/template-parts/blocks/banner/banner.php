@@ -33,6 +33,7 @@ $btn_text    = ( ! empty( $cta['title'] ) ) ? $cta['title'] : 'Call To Action';
 $btn_link    = ( ! empty( $cta['url'] ) ) ? $cta['url'] : '#';
 $link_target = ( ! empty( $cta['target'] ) ) ? $cta['target'] : '_self';
 $after_cta   = get_field( 'after_call_to_action_text' ) ? get_field( 'after_call_to_action_text' ) : '';
+$bottom_text = get_field( 'banner_bottom_text' );
 ?>
 <!-- Banner Section -->
 <section class="banner" style="background-image: url(<?php echo esc_url( $bg_image[0] ); ?>)">
@@ -54,41 +55,28 @@ $after_cta   = get_field( 'after_call_to_action_text' ) ? get_field( 'after_call
 
 		</div>
 	</div>
-	<div class="banner_bottom">
+	<?php
+	if ( ! empty( $bottom_text ) ) {
+		?>
+		<div class="banner_bottom">
 			<div class="container">
 				<div class="row">
-					
-					<!-- Banner Bottom Row -->
 					<div class="banner_bottom_text">
-						
-						<!-- Banner Text Loop -->
-						<div class="banner_box">
-							<a href="">Descoberta</a>
-						</div>
-
-						<!-- Banner Text Loop -->
-						<div class="banner_box">
-							<a href="">Planejamento</a>
-						</div>
-
-						<!-- Banner Text Loop -->
-						<div class="banner_box">
-							<a href="">Design</a>
-						</div>
-
-						<!-- Banner Text Loop -->
-						<div class="banner_box">
-							<a href="">Desenvolvimento</a>
-						</div>
-
-						<!-- Banner Text Loop -->
-						<div class="banner_box">
-							<a href="">Testando</a>
-						</div>
-
+						<?php
+						foreach ( $bottom_text as $text ) {
+							?>
+							<!-- Banner Text Loop -->
+							<div class="banner_box">
+								<a href=""><?php echo esc_html( $text['text']); ?></a>
+							</div>
+							<?php
+						}
+						?>
 					</div>
-
 				</div>
 			</div>
 		</div>
+		<?php
+	}
+	?>
 </section>
