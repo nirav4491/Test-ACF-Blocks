@@ -5,12 +5,18 @@
 /* padding & Margin CSS */
 /* Button CSS */
 /* Width & Max-width CSS */
+/* Border CSS */
 /* Background CSS */
 /* Element CSS */
 body {
   font-family: "IBM Plex Sans", sans-serif !important;
   font-size: 16px;
   overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
@@ -44,6 +50,51 @@ body {
   color: #030303 !important;
 }
 
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
 header {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -65,7 +116,7 @@ header .header_right_part ul {
 header .header_left_part {
   gap: 95px;
   width: 100%;
-  max-width: calc(100% - 336px);
+  max-width: calc(100% - 344px);
   /* Header Logo CSS */
   /* Header Navigation CSS */
 }
@@ -198,13 +249,14 @@ header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li
     height: auto;
     border: 1px solid #878787;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
   }
 }
 header .header_right_part {
   justify-content: flex-end;
   gap: 45px;
   width: 100%;
-  max-width: 306px;
+  max-width: 314px;
   /* header Lang Selector CSS */
 }
 @media only screen and (max-width: 767px) {
@@ -223,8 +275,28 @@ header .header_right_part .header_lang_selector .lang_selector {
   align-items: center;
   gap: 6px;
 }
-header .header_right_part .header_lang_selector .lang_selector .lang_text .text {
-  font-weight: normal;
+header .header_right_part .header_lang_selector .lang_selector .country-selector label {
+  background-color: transparent;
+  border: none;
+  width: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+header .header_right_part .header_lang_selector .lang_selector .country-selector label::after {
+  transform: translateY(-50%);
+  top: 50%;
+}
+header .header_right_part .header_lang_selector .lang_selector .country-selector label .wglanguage-name {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+header .header_right_part .header_lang_selector .lang_selector .country-selector label .wglanguage-name::before {
+  width: 22px !important;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: contain !important;
 }
 
 /*# sourceMappingURL=header.css.map */

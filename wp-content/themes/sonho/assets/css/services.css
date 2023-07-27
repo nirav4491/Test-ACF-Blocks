@@ -1,0 +1,198 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+/* Fonts Related CSS */
+/* Flex CSS */
+/* padding & Margin CSS */
+/* Button CSS */
+/* Width & Max-width CSS */
+/* Border CSS */
+/* Background CSS */
+/* Element CSS */
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #030303;
+  border: 1px solid #030303;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #030303 !important;
+}
+
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
+/* Banner CSS */
+.service_section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #F4F3EF;
+}
+@media only screen and (max-width: 599px) {
+  .service_section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+.service_section .row {
+  gap: 30px;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 991px) {
+  .service_section .row {
+    justify-content: center;
+  }
+}
+.service_section .service_image {
+  width: 100%;
+  max-width: 630px;
+}
+@media only screen and (max-width: 1199px) {
+  .service_section .service_image {
+    max-width: 480px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .service_section .service_image {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.service_section .service_details {
+  width: calc(100% - 660px);
+  max-width: 522px;
+}
+.service_section .service_details .details_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+  margin-top: 50px;
+}
+.service_section .service_details .details_box .box_row {
+  width: 100%;
+  max-width: calc(50% - 20px);
+}
+.service_section .service_details .details_box .box_row a {
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #D6D6D6;
+  padding-bottom: 10px;
+}
+.service_section .service_details .details_box .box_row a .box_text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #030303;
+  max-width: calc(100% - 40px);
+}
+.service_section .service_details .details_box .box_row a .box_icon {
+  height: 25px;
+  width: 25px;
+}
+.service_section .service_details .details_box .box_row a:hover .box_icon svg .circle {
+  fill: #2A63E2;
+}
+@media only screen and (max-width: 599px) {
+  .service_section .service_details .details_box .box_row {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .service_section .service_details .details_box {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .service_section .service_details {
+    width: calc(100% - 510px);
+  }
+}
+@media only screen and (max-width: 991px) {
+  .service_section .service_details {
+    width: 100%;
+    max-width: 630px;
+  }
+}
+
+/*# sourceMappingURL=services.css.map */

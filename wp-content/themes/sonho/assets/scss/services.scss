@@ -1,0 +1,98 @@
+@use "global";
+
+/* Banner CSS */
+.service_section {
+	@include global.padd_mar($pt: 100px, $pb: 100px);
+	@include global.background($color: #F4F3EF);
+
+	@media only screen and (max-width: 599px) {
+		@include global.padd_mar($pt: 70px, $pb: 70px);
+	}
+
+	.row {
+		gap: 30px;
+		@include global.flex-align($justify: space-between);
+
+		@media only screen and (max-width: 991px) {
+			@include global.flex-align($justify: center);
+		}
+
+	}
+
+	.service_image {
+		@include global.width($width: 100%, $max-width: 630px);
+
+		@media only screen and (max-width: 1199px) {
+			@include global.width($max-width: 480px);
+		}
+
+		@media only screen and (max-width: 991px) {
+			@include global.width($max-width: 100%);
+			@include global.font($align: center);
+		}
+
+	}
+
+	.service_details {
+		@include global.width($max-width: 522px, $width: calc(100% - 660px));
+
+		.details_box {
+			@include global.flex;
+			@include global.flex-align($gap: 10px 40px);
+			@include global.padd_mar($mt: 50px);
+
+			.box_row {
+				@include global.width($width: 100%, $max-width: calc(50% - 20px));
+
+				a {
+					@include global.font($decoration: none);
+					@include global.flex;
+					@include global.flex-align($align: center,$gap: 15px, $justify: space-between);
+					@include global.width($width: 100%);
+					@include global.border($width: 0 0 1px 0, $color: #D6D6D6, $style: solid);
+					@include global.padd_mar($pb: 10px);
+
+					.box_text {
+						@include global.font($size: 16px, $weight: 500, $color: #030303, $line-height: 21px);
+						@include global.width($max-width: calc(100% - 40px));
+					}
+
+					.box_icon {
+						height: 25px;
+						width: 25px;
+					}
+
+					&:hover {
+
+						.box_icon {
+							svg {
+								.circle {
+									fill: #2A63E2;
+								}
+							}
+						}
+
+					}
+				}
+
+				@media only screen and (max-width: 599px) {
+					@include global.width($width: 100%, $max-width: 100%);
+				}
+			}
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($mt: 40px);
+			}
+		}
+
+		@media only screen and (max-width: 1199px) {
+			@include global.width($width: calc(100% - 510px));
+		}
+
+		@media only screen and (max-width: 991px) {
+			@include global.width($max-width: 630px, $width: 100%);
+		}
+
+	}
+
+}

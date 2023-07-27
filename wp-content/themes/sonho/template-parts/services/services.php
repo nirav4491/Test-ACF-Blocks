@@ -32,7 +32,7 @@ $service_description = get_field( 'description' );
 $services            = get_field( 'services' );
 ?>
 <!-- Banner Section -->
-<section class="services">
+<section class="services" style="display:none !important;">
 	<div class="container">
 		<div class="row">
 			<div class="services_left">
@@ -58,3 +58,106 @@ $services            = get_field( 'services' );
 		</div>
 	</div>
 </section>
+<!-- Services Section -->
+<link href="/wp-content/themes/sonho/assets/css/services.css" rel="stylesheet" type="text/css">
+	<section class="service_section">
+		<div class="container">
+			<div class="row">
+
+				<!-- Service Image -->
+				<div class="service_image">
+					<img src="/wp-content/themes/sonho/assets/images/services/service_img.jpg" alt="service_img" />
+				</div>
+
+				<!-- Service Details -->
+				<div class="service_details">
+					<h4 class="sub_title">Serviços</h4>
+					<h2 class="title">Por que você deve escolher a Sonho?</h2>
+					<p class="content">Trabalhamos em estreita colaboração com os nossos clientes para entender as suas necessidades, objetivos, mercados-alvo e posicionamento competitivo.</p>
+
+					<div class="details_box">
+
+						<!-- loop -->
+						<div class="box_row">
+							<a href="#">
+								<span class="box_text">Design</span>
+								<span class="box_icon">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path class="circle" d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="#030303"/>
+										<path d="M14.527 16.2163L13.7447 15.5068L16.819 12.669H6.08105V11.6555H16.819L13.7447 8.81761L14.527 8.10815L18.9189 12.1622L14.527 16.2163Z" fill="white"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+
+						<!-- loop -->
+						<div class="box_row">
+							<a href="#">
+								<span class="box_text">Auditoria Do Projecto</span>
+								<span class="box_icon">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path class="circle" d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="#030303"/>
+										<path d="M14.527 16.2163L13.7447 15.5068L16.819 12.669H6.08105V11.6555H16.819L13.7447 8.81761L14.527 8.10815L18.9189 12.1622L14.527 16.2163Z" fill="white"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+
+						<!-- loop -->
+						<div class="box_row">
+							<a href="#">
+								<span class="box_text">Desenvolvimento</span>
+								<span class="box_icon">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path class="circle" d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="#030303"/>
+										<path d="M14.527 16.2163L13.7447 15.5068L16.819 12.669H6.08105V11.6555H16.819L13.7447 8.81761L14.527 8.10815L18.9189 12.1622L14.527 16.2163Z" fill="white"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+
+						<!-- loop -->
+						<div class="box_row">
+							<a href="#">
+								<span class="box_text">Branding e Conceitos</span>
+								<span class="box_icon">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path class="circle" d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="#030303"/>
+										<path d="M14.527 16.2163L13.7447 15.5068L16.819 12.669H6.08105V11.6555H16.819L13.7447 8.81761L14.527 8.10815L18.9189 12.1622L14.527 16.2163Z" fill="white"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+
+						<!-- loop -->
+						<div class="box_row">
+							<a href="#">
+								<span class="box_text">Manutenção</span>
+								<span class="box_icon">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path class="circle" d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="#030303"/>
+										<path d="M14.527 16.2163L13.7447 15.5068L16.819 12.669H6.08105V11.6555H16.819L13.7447 8.81761L14.527 8.10815L18.9189 12.1622L14.527 16.2163Z" fill="white"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+
+						<!-- loop -->
+						<div class="box_row">
+							<a href="#">
+								<span class="box_text">Otimização de SEO</span>
+								<span class="box_icon">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path class="circle" d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z" fill="#030303"/>
+										<path d="M14.527 16.2163L13.7447 15.5068L16.819 12.669H6.08105V11.6555H16.819L13.7447 8.81761L14.527 8.10815L18.9189 12.1622L14.527 16.2163Z" fill="white"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>

@@ -54,4 +54,41 @@ $after_cta   = get_field( 'after_call_to_action_text' ) ? get_field( 'after_call
 
 		</div>
 	</div>
+	<div class="banner_bottom">
+			<div class="container">
+				<div class="row">
+					
+					<!-- Banner Bottom Row -->
+					<div class="banner_bottom_text">
+						
+						<!-- Banner Text Loop -->
+						<div class="banner_box">
+							<a href="">Descoberta</a>
+						</div>
+
+						<!-- Banner Text Loop -->
+						<div class="banner_box">
+							<a href="">Planejamento</a>
+						</div>
+
+						<!-- Banner Text Loop -->
+						<div class="banner_box">
+							<a href="">Design</a>
+						</div>
+
+						<!-- Banner Text Loop -->
+						<div class="banner_box">
+							<a href="">Desenvolvimento</a>
+						</div>
+
+						<!-- Banner Text Loop -->
+						<div class="banner_box">
+							<a href="">Testando</a>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
 </section>

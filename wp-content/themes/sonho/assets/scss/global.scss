@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 /* Fonts Related CSS */
-@mixin font ($size: '', $weight: '', $style: '', $line-height: '', $color: '', $decoration: '') {
+@mixin font ($size: '', $weight: '', $style: '', $line-height: '', $color: '', $decoration: '', $letter-spacing: '', $transform: '', $align: '') {
 	@if $size != '' {
 		font-size: $size;
 	}
@@ -26,6 +26,18 @@
 	@if $decoration != '' {
 		text-decoration: $decoration;
 	}
+
+	@if $letter-spacing != '' {
+		letter-spacing: $letter-spacing;
+	}
+
+	@if $transform != '' {
+		text-transform: $transform;
+	}
+
+	@if $align != '' {
+		text-align: $align;
+	}
 }
 
 /* Flex CSS */
@@ -34,18 +46,25 @@
 	flex-wrap: wrap;
 }
 
-@mixin flex-align ($justify: '', $align: '', $direction: '', $gap: '') {
+@mixin flex-align ($justify: '', $align: '', $direction: '', $gap: '', $wrap: '') {
 	@if $justify != '' {
 		justify-content: $justify;
 	}
+
 	@if $align != '' {
 		align-items: $align;
 	}
+
 	@if $direction != '' {
 		flex-direction: $direction;
 	}
+
 	@if $gap != '' {
 		gap: $gap;
+	}
+
+	@if $wrap != '' {
+		flex-wrap: $wrap;
 	}
 }
 
@@ -55,7 +74,15 @@
 }
 
 /* padding & Margin CSS */
-@mixin padd_mar ($pt: '', $pb: '', $pl: '', $pr: '', $mt: '', $mb: '', $ml: '', $mr: '') {
+@mixin padd_mar ($p: '', $m: '', $pt: '', $pb: '', $pl: '', $pr: '', $mt: '', $mb: '', $ml: '', $mr: '') {
+	@if $p != '' {
+		padding: $p;
+	}
+
+	@if $m != '' {
+		margin: $m;
+	}
+
 	@if $pt != '' {
 		padding-top: $pt;
 	}
@@ -110,8 +137,23 @@
 	}
 }
 
+/* Border CSS */
+@mixin border ($width: '', $style: '', $color: '') {
+	@if $width != '' {
+		border-width: $width;
+	}
+
+	@if $style != '' {
+		border-style: $style;
+	}
+
+	@if $color != '' {
+		border-color: $color;
+	}
+}
+
 /* Background CSS */
-@mixin background ($color: '', $image: '', $position: '', $repeat: '', $size: '') {
+@mixin background ($color: '', $image: '', $position: '', $repeat: '', $size: '', $gradient: '') {
 	@if $color != '' {
 		background-color: $color;
 	}
@@ -131,6 +173,13 @@
 	@if $size != '' {
 		background-size: $size;
 	}
+
+	@if $gradient != '' {
+		background: -webkit-$gradient;
+		background: -moz-$gradient;
+		background: -o-$gradient;
+		background: $gradient;
+	}
 }
 
 /* Element CSS */
@@ -139,6 +188,10 @@ body {
 	font-size: 16px;
 	overflow-x: hidden;
 	margin-bottom: 0 !important;
+}
+
+.entry-content {
+	@include padd_mar($mb: 0 !important, $mt: 0 !important)
 }
 
 .container {
@@ -158,4 +211,32 @@ body {
 .btn:hover {
 	background-color: transparent;
 	color: #030303 !important;
+}
+
+.sub_title {
+	@include padd_mar($m: 0, $mb: 8px);
+	@include font($size: 18px, $weight: 600, $line-height: 22px, $color: #999);
+
+	@media only screen and (max-width: 599px) {
+		@include font($size: 16px, $line-height: 20px);
+	}
+}
+
+.title {
+	@include padd_mar($m: 0, $mb: 20px);
+	@include font($size: 40px, $weight: 600, $color: #030303, $line-height: 48px);
+
+	@media only screen and (max-width: 599px) {
+		@include padd_mar($m: 0, $mb: 15px);
+		@include font($size: 23px, $line-height: 31px);
+	}
+}
+
+.content {
+	@include padd_mar($m: 0, $mb: 15px);
+	@include font($size: 16px, $weight: 400, $color: #030303, $line-height: 19px);
+}
+
+.content:last-of-type {
+	@include padd_mar($m: 0);
 }

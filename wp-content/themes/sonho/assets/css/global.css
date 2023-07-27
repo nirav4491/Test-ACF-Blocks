@@ -5,12 +5,18 @@
 /* padding & Margin CSS */
 /* Button CSS */
 /* Width & Max-width CSS */
+/* Border CSS */
 /* Background CSS */
 /* Element CSS */
 body {
   font-family: "IBM Plex Sans", sans-serif !important;
   font-size: 16px;
   overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
@@ -42,6 +48,51 @@ body {
 .btn:hover {
   background-color: transparent;
   color: #030303 !important;
+}
+
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
 }
 
 /*# sourceMappingURL=global.css.map */

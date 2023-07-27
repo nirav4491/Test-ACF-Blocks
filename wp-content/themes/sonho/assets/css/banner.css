@@ -5,12 +5,18 @@
 /* padding & Margin CSS */
 /* Button CSS */
 /* Width & Max-width CSS */
+/* Border CSS */
 /* Background CSS */
 /* Element CSS */
 body {
   font-family: "IBM Plex Sans", sans-serif !important;
   font-size: 16px;
   overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
@@ -44,6 +50,51 @@ body {
   color: #030303 !important;
 }
 
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
 /* Banner CSS */
 .banner {
   padding-top: 90px;
@@ -52,6 +103,8 @@ body {
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-color: #030303;
+  position: relative;
+  /* Banner Bottom Text */
 }
 @media only screen and (max-width: 1024px) {
   .banner {
@@ -129,6 +182,49 @@ body {
   background-color: transparent;
   border-color: #fff;
   color: #fff !important;
+}
+.banner .banner_bottom {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #fff;
+  background: -webkit- linear-gradient(180deg, rgba(5, 7, 12, 0) 0%, #05070C 100%);
+  background: -moz- linear-gradient(180deg, rgba(5, 7, 12, 0) 0%, #05070C 100%);
+  background: -o- linear-gradient(180deg, rgba(5, 7, 12, 0) 0%, #05070C 100%);
+  background: linear-gradient(180deg, rgba(5, 7, 12, 0) 0%, #05070C 100%);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.banner .banner_bottom .banner_bottom_text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.banner .banner_bottom .banner_bottom_text a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+@media only screen and (max-width: 599px) {
+  .banner .banner_bottom .banner_bottom_text a {
+    font-size: 14px;
+    letter-spacing: 0.39px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }
 
 /*# sourceMappingURL=banner.css.map */

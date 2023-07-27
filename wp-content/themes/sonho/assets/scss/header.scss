@@ -16,7 +16,7 @@ header {
 	/* header Left Part CSS */
 	.header_left_part {
 		@include global.flex-align($gap: 95px);
-		@include global.width($width: 100%, $max-width: calc(100% - 336px));
+		@include global.width($width: 100%, $max-width: calc(100% - 344px));
 
 		@media only screen and (max-width: 991px) {
 			@include global.flex-align($gap: 30px);
@@ -150,6 +150,7 @@ header {
 						height: auto;
 						border: 1px solid #878787;
 						box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+						background-color: #fff;
 					}
 				}
 			}
@@ -160,7 +161,7 @@ header {
 	/* header Right Part CSS */
 	.header_right_part {
 		@include global.flex-align($gap: 45px,$justify: flex-end);
-		@include global.width($width: 100%, $max-width: 306px);
+		@include global.width($width: 100%, $max-width: 314px);
 
 		@media only screen and (max-width: 767px) {
 			display: none;
@@ -175,11 +176,37 @@ header {
 			.lang_selector {
 				@include global.flex;
 				@include global.flex-align($align: center, $gap: 6px);
-				.lang_text {
-					.text {
-						@include global.font($weight: normal);
+				
+				.country-selector {
+					label {
+						background-color: transparent;
+						border: none;
+						width: 70px;
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+
+						&::after {
+							transform: translateY(-50%);
+							top: 50%;
+						}
+
+						.wglanguage-name {
+							padding: 0;
+							@include global.font($size: 16px, $weight: 400);
+
+							&::before {
+								width: 22px !important;
+								margin-right: 5px;
+								@include global.background($size: contain !important, $repeat: no-repeat);
+							}
+
+
+						}
+
 					}
 				}
+
 			}
 		}
 	}

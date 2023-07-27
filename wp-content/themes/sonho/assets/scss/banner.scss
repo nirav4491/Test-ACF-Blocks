@@ -7,6 +7,7 @@
 	background-repeat: no-repeat;
 	background-size: auto 100%;
 	background-color: #030303;
+	position: relative;
 
 	@media only screen and (max-width: 1024px) {
 		background-position: left bottom;
@@ -67,6 +68,35 @@
 					background-color: transparent;
 					border-color: #fff;
 					color: #fff !important;
+				}
+			}
+		}
+	}
+
+	/* Banner Bottom Text */
+	.banner_bottom {
+		@include global.border($width: 1px 0 0 0, $style: solid, $color: #fff);
+		@include global.background($gradient:linear-gradient(180deg, rgba(5, 7, 12, 0.00) 0%, #05070C 100%));
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+
+		.banner_bottom_text {
+			@include global.flex;
+			@include global.flex-align($justify: space-between, $align: center, $gap: 25px, $wrap: nowrap);
+			@include global.width($width: 100%);
+
+			a {
+				display: inline-block;
+				@include global.font($color: #fff, $size: 16px, $decoration: none, $letter-spacing: 0.48px, $transform: uppercase, $weight: 400);
+				@include global.padd_mar($pb: 23px, $pt: 23px);
+
+				@media only screen and (max-width: 599px) {
+					@include global.font($size: 14px, $letter-spacing: 0.39px);
+					@include global.padd_mar($pb: 12px, $pt: 12px);
 				}
 			}
 		}
