@@ -70,17 +70,9 @@
 				<div class="header_right_part">
 					<!-- Header Language Selector -->
 					<div class="header_lang_selector">
-						<?php echo do_shortcode( '[weglot_switcher]' ); ?>
-						<!-- <div class="lang_selector">
-							<img src="/wp-content/themes/sonho/assets/images/en.png" alt="en" />
-							<span class="lang_text"><span class="text">EN</span>
-								<span class="svg_icon">
-									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M8.825 0.158008L5 3.97467L1.175 0.158007L4.37114e-07 1.33301L5 6.33301L10 1.33301L8.825 0.158008Z" fill="#030303"/>
-									</svg>
-								</span>
-							</span>
-						</div> -->
+						<div class="lang_selector">
+							<?php echo do_shortcode( '[weglot_switcher]' ); ?>
+						</div>
 
 					</div>
 
