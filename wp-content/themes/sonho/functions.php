@@ -212,70 +212,6 @@ function sonho_enqueue_scripts() {
 		'all'
 	);
 
-	wp_enqueue_style(
-		'banner-style',
-		get_template_directory_uri() . '/assets/css/banner.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/banner.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'services-style',
-		get_template_directory_uri() . '/assets/css/services.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/services.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'project-style',
-		get_template_directory_uri() . '/assets/css/project.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/project.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'about-us-style',
-		get_template_directory_uri() . '/assets/css/about_us.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/about_us.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'contact-us-style',
-		get_template_directory_uri() . '/assets/css/contact_us.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/contact_us.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'client-us-style',
-		get_template_directory_uri() . '/assets/css/client.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/client.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'testimonial-style',
-		get_template_directory_uri() . '/assets/css/testimonial.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/testimonial.css' ),
-		'all'
-	);
-
-	wp_enqueue_style(
-		'faq-style',
-		get_template_directory_uri() . '/assets/css/faq.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/faq.css' ),
-		'all'
-	);
-
 	wp_enqueue_script(
 		'jquery-min-js',
 		get_template_directory_uri() . '/js/jquery.min.js',
@@ -291,38 +227,8 @@ function sonho_enqueue_scripts() {
 		filemtime( get_template_directory() . '/js/slick.min.js' ),
 		'all'
 	);
-
-	wp_enqueue_script(
-		'testimonial-js',
-		get_template_directory_uri() . '/js/testimonial.js',
-		array( 'jquery' ),
-		filemtime( get_template_directory() . '/js/testimonial.js' ),
-		'all'
-	);
-
-	wp_enqueue_script(
-		'faq-js',
-		get_template_directory_uri() . '/js/faq.js',
-		array( 'jquery' ),
-		filemtime( get_template_directory() . '/js/faq.js' ),
-		'all'
-	);
 }
 add_action( 'wp_enqueue_scripts', 'sonho_enqueue_scripts', 20 );
-
-/**
- * Function for enqueue styles and scripts.
- */
-function sonho_admin_enqueue_scripts() {
-	wp_enqueue_style(
-		'banner-style',
-		get_template_directory_uri() . '/assets/css/banner.css',
-		array(),
-		filemtime( get_template_directory() . '/assets/css/banner.css' ),
-		'all'
-	);
-}
-add_action( 'admin_enqueue_scripts', 'sonho_admin_enqueue_scripts', 20 );
 
 add_action( 'acf/init', 'sonho_register_blocks' );
 /**
@@ -337,9 +243,18 @@ function sonho_register_blocks() {
 				'name'            => 'banner',
 				'title'           => __( 'Banner' ),
 				'description'     => __( 'A custom banner block.' ),
-				'render_template' => 'template-parts/blocks/banner/banner.php',
+				'render_template' => 'template-parts/blocks/banner.php',
 				'category'        => 'formatting',
 				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'banner-style',
+						get_template_directory_uri() . '/assets/css/banner.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/banner.css' ),
+						'all'
+					);
+				}
 			)
 		);
 
@@ -348,9 +263,18 @@ function sonho_register_blocks() {
 				'name'            => 'services',
 				'title'           => __( 'Services' ),
 				'description'     => __( 'A custom banner block.' ),
-				'render_template' => 'template-parts/services/services.php',
+				'render_template' => 'template-parts/blocks/services.php',
 				'category'        => 'formatting',
 				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'services-style',
+						get_template_directory_uri() . '/assets/css/services.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/services.css' ),
+						'all'
+					);
+				}
 			)
 		);
 
@@ -359,9 +283,132 @@ function sonho_register_blocks() {
 				'name'            => 'projects',
 				'title'           => __( 'Projects' ),
 				'description'     => __( 'A custom banner block.' ),
-				'render_template' => 'template-parts/projects/projects.php',
+				'render_template' => 'template-parts/blocks/projects.php',
 				'category'        => 'formatting',
 				'icon'            => 'desktop',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'project-style',
+						get_template_directory_uri() . '/assets/css/project.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/project.css' ),
+						'all'
+					);
+				}
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'about',
+				'title'           => __( 'About' ),
+				'description'     => __( 'A custom banner block.' ),
+				'render_template' => 'template-parts/blocks/about.php',
+				'category'        => 'formatting',
+				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'about-us-style',
+						get_template_directory_uri() . '/assets/css/about_us.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/about_us.css' ),
+						'all'
+					);
+				}
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'contact',
+				'title'           => __( 'Contact' ),
+				'description'     => __( 'A custom banner block.' ),
+				'render_template' => 'template-parts/blocks/contact.php',
+				'category'        => 'formatting',
+				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'contact-us-style',
+						get_template_directory_uri() . '/assets/css/contact_us.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/contact_us.css' ),
+						'all'
+					);
+				}
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'clients',
+				'title'           => __( 'Clients' ),
+				'description'     => __( 'A custom banner block.' ),
+				'render_template' => 'template-parts/blocks/client.php',
+				'category'        => 'formatting',
+				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'client-us-style',
+						get_template_directory_uri() . '/assets/css/client.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/client.css' ),
+						'all'
+					);
+				}
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'testimonial',
+				'title'           => __( 'Testimonial' ),
+				'description'     => __( 'A custom banner block.' ),
+				'render_template' => 'template-parts/blocks/testimonial.php',
+				'category'        => 'formatting',
+				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'testimonial-style',
+						get_template_directory_uri() . '/assets/css/testimonial.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/testimonial.css' ),
+						'all'
+					);
+					wp_enqueue_script(
+						'testimonial-js',
+						get_template_directory_uri() . '/js/testimonial.js',
+						array( 'jquery' ),
+						filemtime( get_template_directory() . '/js/testimonial.js' ),
+						'all'
+					);
+				}
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'faq',
+				'title'           => __( 'FAQ' ),
+				'description'     => __( 'A custom banner block.' ),
+				'render_template' => 'template-parts/blocks/faq.php',
+				'category'        => 'formatting',
+				'icon'            => 'block-default',
+				'enqueue_assets'    => function () {
+					wp_enqueue_style(
+						'faq-style',
+						get_template_directory_uri() . '/assets/css/faq.css',
+						array(),
+						filemtime( get_template_directory() . '/assets/css/faq.css' ),
+						'all'
+					);
+					wp_enqueue_script(
+						'faq-js',
+						get_template_directory_uri() . '/js/faq.js',
+						array( 'jquery' ),
+						filemtime( get_template_directory() . '/js/faq.js' ),
+						'all'
+					);
+				}
 			)
 		);
 	}
