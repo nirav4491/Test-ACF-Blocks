@@ -19,7 +19,7 @@
 				<!-- Footer Logo -->
 				<div class="footer_logo">
 					<a href="/">
-						<img src="/wp-content/uploads/2023/07/sonho.svg" alt="logo" />
+						<img src="/wp-content/uploads/2023/07/cropped-Group-16.png" alt="logo" />
 					</a>
 				</div>
 
