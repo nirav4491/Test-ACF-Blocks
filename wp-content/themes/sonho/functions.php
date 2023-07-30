@@ -287,7 +287,7 @@ function sonho_enqueue_scripts() {
 	wp_enqueue_script(
 		'slick-min-js',
 		get_template_directory_uri() . '/js/slick.min.js',
-		array(),
+		array( 'jquery' ),
 		filemtime( get_template_directory() . '/js/slick.min.js' ),
 		'all'
 	);
@@ -295,7 +295,7 @@ function sonho_enqueue_scripts() {
 	wp_enqueue_script(
 		'testimonial-js',
 		get_template_directory_uri() . '/js/testimonial.js',
-		array(),
+		array( 'jquery' ),
 		filemtime( get_template_directory() . '/js/testimonial.js' ),
 		'all'
 	);
@@ -303,7 +303,7 @@ function sonho_enqueue_scripts() {
 	wp_enqueue_script(
 		'faq-js',
 		get_template_directory_uri() . '/js/faq.js',
-		array(),
+		array( 'jquery' ),
 		filemtime( get_template_directory() . '/js/faq.js' ),
 		'all'
 	);
