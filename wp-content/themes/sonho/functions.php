@@ -253,7 +253,7 @@ function sonho_enqueue_scripts() {
 	);
 
 	wp_enqueue_style(
-		'contact-us-style',
+		'client-us-style',
 		get_template_directory_uri() . '/assets/css/client.css',
 		array(),
 		filemtime( get_template_directory() . '/assets/css/client.css' ),
