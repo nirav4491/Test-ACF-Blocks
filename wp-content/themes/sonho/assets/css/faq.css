@@ -1,0 +1,208 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+/* Fonts Related CSS */
+/* Flex CSS */
+/* padding & Margin CSS */
+/* Button CSS */
+/* Width & Max-width CSS */
+/* Border CSS */
+/* Background CSS */
+/* Element CSS */
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #030303;
+  border: 1px solid #030303;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #030303 !important;
+}
+
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
+.faq_section {
+  background-color: #E8E7E0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media only screen and (max-width: 599px) {
+  .faq_section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+.faq_section .row {
+  justify-content: space-between;
+  gap: 30px;
+}
+@media only screen and (max-width: 1024px) {
+  .faq_section .row {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+.faq_section .content_box {
+  width: 100%;
+  max-width: 535px;
+}
+.faq_section .content_box .title {
+  margin-bottom: 35px;
+}
+@media only screen and (max-width: 1024px) {
+  .faq_section .content_box {
+    width: 100%;
+    max-width: 630px;
+  }
+  .faq_section .content_box a {
+    display: none;
+  }
+  .faq_section .content_box .title {
+    margin-bottom: 0px;
+  }
+}
+.faq_section .content_faq {
+  width: calc(100% - 565px);
+  max-width: 630px;
+}
+@media only screen and (max-width: 1024px) {
+  .faq_section .content_faq {
+    width: 100%;
+    max-width: 630px;
+  }
+}
+.faq_section .content_faq a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #030303;
+  text-decoration: none;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #D6D6D6;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  outline: none;
+}
+.faq_section .content_faq a .faq_text {
+  width: calc(100% - 67px);
+}
+.faq_section .content_faq a .faq_svg {
+  width: 37px;
+  height: 37px;
+  transition: all 0.3s ease-in-out;
+}
+.faq_section .content_faq a .faq_svg svg {
+  width: 100%;
+  height: 100%;
+}
+.faq_section .content_faq a.active .faq_svg {
+  transform: rotate(180deg);
+}
+.faq_section .content_faq .faq_content {
+  display: none;
+  overflow: hidden;
+}
+.faq_section .content_faq .faq_content.active {
+  padding-top: 25px;
+}
+.faq_section .content_faq .faq_content p {
+  margin: 0 0 15px;
+}
+.faq_section .content_faq .faq_content p:last-of-type {
+  margin-bottom: 0;
+}
+.faq_section .mobile_btn {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .faq_section .mobile_btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 630px;
+    margin-top: 30px;
+  }
+}
+
+/*# sourceMappingURL=faq.css.map */

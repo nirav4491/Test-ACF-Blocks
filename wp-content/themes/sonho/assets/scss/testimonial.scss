@@ -1,0 +1,198 @@
+@use "global";
+
+.testimonial_section {
+	@include global.padd_mar($pt: 0px, $pb: 100px);
+	@include global.background($color: #F4F3EF);
+	overflow: hidden;
+
+	@media only screen and (max-width: 599px) {
+		@include global.padd_mar($pt: 0px, $pb: 70px);
+	}
+
+	.site_content {
+		@include global.flex;
+		@include global.flex-align($justify: space-between, $gap: 30px, $align: center);
+		@include global.width($width: 100%);
+
+		.title {
+			@include global.padd_mar($mb: 30px);
+		}
+
+		.content_box {
+			@include global.width($width: 100%, $max-width: calc(100% - 125px));
+
+			@media only screen and (max-width: 767px) {
+				@include global.width($width: 100%, $max-width: 100%);
+			}
+
+		}
+
+		.content_arrow {
+			@include global.flex;
+			@include global.flex-align($justify: flex-end, $gap: 20px, $align: center);
+			@include global.width($width: 100%, $max-width: 95px);
+
+			@media only screen and (max-width: 767px) {
+				display: none;
+			}
+
+			a {
+				width: 37px;
+				height: 37px;
+
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+
+				&.prev {
+					transform: rotate(180deg);
+				}
+
+				&:hover {
+					svg {
+						.circle {
+							fill: #2A63E2;
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+
+	.testimonial_slider {
+		@include global.flex;
+		@include global.width($width: calc(100% + 30px));
+
+		@media only screen and (max-width: 767px) {
+			@include global.width($max-width: 100%, $width: 100%);
+		}
+
+		.slick-track {
+			@include global.flex;
+		}
+
+		.item {
+			height: initial;
+			@include global.padd_mar($pr: 30px);
+
+			@media only screen and (max-width: 767px) {
+				@include global.padd_mar($pr: 0);
+			}
+		}
+
+		.testimonial_box {
+			@include global.background($color: #fff);
+			@include global.border($width: 1px, $style: solid, $color: #E4E4E4);
+			@include global.padd_mar($p: 40px 40px 155px);
+			@include global.width($max-width: 100%, $width: 100%);
+			position: relative;
+			height: 100%;
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($p: 30px 20px);
+			}
+
+			h3 {
+				@include global.padd_mar($m: 0 0 10px);
+				@include global.font($size: 23px, $color: #030303, $weight: 600, $line-height: 30px);
+
+				@media only screen and (max-width: 599px) {
+					@include global.font($size: 18px, $line-height: 22px);
+				}
+			}
+
+			p {
+				@include global.padd_mar($m: 0);
+				@include global.font($size: 16px, $color: #030303, $weight: 400, $line-height: 19px);
+			}
+
+			.testimonial_details {
+				@include global.flex;
+				@include global.flex-align($gap: 20px, $align: center);
+				@include global.padd_mar($mt: 40px);
+				position: absolute;
+				bottom: 40px;
+				width: calc(100% - 80px);
+				left: 40px;
+				right: 0;
+
+				@media only screen and (max-width: 599px) {
+					position: relative;
+					bottom: initial;
+					width: 100%;
+					left: initial;
+					right: initial;
+					@include global.padd_mar($mt: 25px);
+				}
+
+				.details_img,
+				.details_img img {
+					width: 70px;
+					height: 70px;
+					object-fit: cover;
+					border-radius: 100%;
+					overflow: hidden;
+				}
+
+				.details_text {
+					@include global.width($width: auto, $max-width: calc(100% - 90px));
+
+					p {
+						@include global.padd_mar($m: 0);
+						@include global.font($size: 18px, $color: #030303, $weight: 600, $line-height: 22px);
+					}
+				}
+
+			}
+
+		}
+
+		.slick-dots {
+			@include global.flex;
+			@include global.flex-align($gap: 20px, $justify: center);
+			position: relative;
+			bottom: 0;
+			margin-top: 35px;
+
+			li {
+				@include global.padd_mar($m: 0);
+				width: auto;
+				height: initial;
+
+				button {
+					@include global.padd_mar($p: 0, $m: 0);
+					@include global.background($color: #BEBEBE);
+					width: 8px;
+					height: 8px;
+					border-radius: 100px;
+					transition: all 0.3s ease-in-out;
+
+					&::before {
+						display: none;
+					}
+
+				}
+
+				&.slick-active {
+
+					button {
+						width: 70px;
+						@include global.background($color: #999999);
+
+						@media only screen and (max-width: 767px) {
+							width: 50px;
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

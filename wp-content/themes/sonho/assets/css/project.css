@@ -1,0 +1,206 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+/* Fonts Related CSS */
+/* Flex CSS */
+/* padding & Margin CSS */
+/* Button CSS */
+/* Width & Max-width CSS */
+/* Border CSS */
+/* Background CSS */
+/* Element CSS */
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #030303;
+  border: 1px solid #030303;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #030303 !important;
+}
+
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
+.project_section {
+  background-color: #E8E7E0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media only screen and (max-width: 599px) {
+  .project_section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+.project_section .site_content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+}
+.project_section .project_details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 767px) {
+  .project_section .project_details {
+    margin-top: 0px;
+    gap: 40px;
+  }
+}
+.project_section .project_details .details_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px 40px;
+}
+@media only screen and (max-width: 767px) {
+  .project_section .project_details .details_row {
+    gap: 50px;
+  }
+}
+.project_section .project_details .details_row .details_box {
+  width: 100%;
+  max-width: calc(50% - 20px);
+}
+@media only screen and (max-width: 767px) {
+  .project_section .project_details .details_row .details_box {
+    max-width: 100%;
+  }
+}
+.project_section .project_details .details_row .details_box .box_img {
+  display: flex;
+  flex-wrap: wrap;
+}
+.project_section .project_details .details_row .details_box .box_content h3 {
+  margin: 25px 0 16px;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
+}
+@media only screen and (max-width: 599px) {
+  .project_section .project_details .details_row .details_box .box_content h3 {
+    font-size: 18px;
+  }
+}
+.project_section .project_details .details_row .details_box .box_content .box_tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.project_section .project_details .details_row .details_box .box_content .box_tag a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #BBB;
+  border-radius: 100px;
+  background-color: #E8E7E0;
+  padding: 11px 20px;
+}
+@media only screen and (max-width: 599px) {
+  .project_section .project_details .details_row .details_box .box_content .box_tag a {
+    padding: 6px 20px;
+  }
+}
+.project_section .project_details a.btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.project_section .project_details a.btn .text {
+  max-width: calc(100% - 31px);
+}
+.project_section .project_details a.btn .svg_icon {
+  height: 20px;
+}
+.project_section .project_details a.btn:hover .svg_icon svg path {
+  fill: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .project_section .project_details a.btn {
+    padding: 12px 20px;
+  }
+}
+
+/*# sourceMappingURL=project.css.map */

@@ -138,7 +138,7 @@
 }
 
 /* Border CSS */
-@mixin border ($width: '', $style: '', $color: '') {
+@mixin border ($width: '', $style: '', $color: '', $radius: '') {
 	@if $width != '' {
 		border-width: $width;
 	}
@@ -149,6 +149,10 @@
 
 	@if $color != '' {
 		border-color: $color;
+	}
+
+	@if $radius != '' {
+		border-radius: $radius;
 	}
 }
 

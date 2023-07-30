@@ -1,0 +1,50 @@
+@use "global";
+
+.client_section {
+	@include global.background($color: #F4F3EF);
+	@include global.padd_mar($pt: 0, $pb: 100px);
+
+	@media only screen and (max-width: 599px) {
+		@include global.padd_mar($pt: 0, $pb: 70px);
+	}
+
+	.site_content {
+		@include global.width($width: 100%);
+		.title {
+			@include global.padd_mar($mb: 30px);
+		}
+	}
+
+	.client_logo_content {
+		@include global.flex;
+		@include global.padd_mar($m: 1px 0 0 1px);
+		@include global.width($width: 100%);
+
+		.client_logo_box {
+			@include global.width($width: 25%);
+			@include global.flex;
+			@include global.flex-align($align: center, $justify: center);
+			@include global.border($width: 1px, $style: solid, $color: #d6d6d6);
+			@include global.background($color: #f4f3ef);
+			@include global.padd_mar($m: -1px 0 0 -1px, $p: 15px);
+			height: 182px;
+
+			@media only screen and (max-width: 767px) {
+				@include global.width($width: 33.33%);
+			}
+
+			@media only screen and (max-width: 575px) {
+				@include global.width($width: 50%);
+				@include global.padd_mar($p: 5px);
+				height: 99px;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+		}
+	}
+
+}

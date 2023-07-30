@@ -1,0 +1,107 @@
+@use "global";
+
+.about_section {
+	@include global.background($color: #F4F3EF);
+	@include global.padd_mar($pt: 100px, $pb: 100px);
+
+	@media only screen and (max-width: 599px) {
+		@include global.padd_mar($pt: 70px, $pb: 70px);
+	}
+
+	.site_content {
+		@include global.font($align: center);
+		@include global.width($width: 100%);
+		.title {
+			@include global.padd_mar($mb: 45px);
+		}
+	}
+
+	.about_us_content_row {
+		@include global.flex;
+		@include global.flex-align($gap: 30px, $justify: space-between, $align: flex-end);
+		@include global.width($width: 100%);
+
+		@media only screen and (max-width: 991px) {
+			@include global.flex-align($justify: center);
+		}
+
+		.about_us_image {
+			@include global.width($width: 100%, $max-width: 510px);
+
+			.img_box {
+				@include global.flex;
+			}
+
+			@media only screen and (max-width: 991px) {
+				@include global.width($max-width: 350px);
+			}
+
+		}
+
+		.about_us_content {
+			@include global.width($width: calc(100% - 540px), $max-width: 490px);
+
+			@media only screen and (max-width: 991px) {
+				@include global.width($max-width: 100%, $width: 100%);
+				@include global.font($align: center);
+			}
+
+			@media only screen and (max-width: 767px) {
+				@include global.font($align: left);
+			}
+
+			p {
+				@include global.font($size: 18px, $color: #030303, $line-height: 23px);
+				@include global.padd_mar($m: 0 0 35px);
+
+				@media only screen and (max-width: 767px) {
+					@include global.padd_mar($m: 0 0 40px);
+				}
+			}
+
+			a {
+				@media only screen and (max-width: 767px) {
+					@include global.width($width: 100%);
+					@include global.font($align: center);
+				}
+			}
+
+			.about_us_author {
+				@include global.padd_mar($mt: 92px);
+
+				@media only screen and (max-width: 991px) {
+					@include global.font($align: center);
+					@include global.padd_mar($mt: 50px);
+				}
+
+				@media only screen and (max-width: 767px) {
+					@include global.font($align: left);
+					@include global.padd_mar($mt: 40px);
+				}
+
+				h4 {
+					@include global.font($size: 16px, $weight: 400);
+					@include global.padd_mar($m: 0 0 25px);
+				}
+
+				.img_box {
+					@include global.flex;
+					@include global.width($max-width: 346px);
+
+					@media only screen and (max-width: 991px) {
+						@include global.padd_mar($ml: auto, $mr: auto);
+					}
+
+					@media only screen and (max-width: 767px) {
+						@include global.padd_mar($ml: 0, $mr: auto)
+					}
+
+				}
+			}
+
+		}
+
+	}
+
+
+}

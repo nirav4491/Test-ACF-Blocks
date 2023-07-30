@@ -181,17 +181,130 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 function sonho_enqueue_scripts() {
 	wp_enqueue_style(
+		'slick-min-style',
+		get_template_directory_uri() . '/assets/css/slick_slider/slick.min.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/slick_slider/slick.min.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'slick-theme-min-style',
+		get_template_directory_uri() . '/assets/css/slick_slider/slick-theme.min.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/slick_slider/slick-theme.min.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
 		'header-style',
 		get_template_directory_uri() . '/assets/css/header.css',
 		array(),
 		filemtime( get_template_directory() . '/assets/css/header.css' ),
 		'all'
 	);
+
+	wp_enqueue_style(
+		'footer-style',
+		get_template_directory_uri() . '/assets/css/footer.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/footer.css' ),
+		'all'
+	);
+
 	wp_enqueue_style(
 		'banner-style',
 		get_template_directory_uri() . '/assets/css/banner.css',
 		array(),
 		filemtime( get_template_directory() . '/assets/css/banner.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'services-style',
+		get_template_directory_uri() . '/assets/css/services.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/services.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'project-style',
+		get_template_directory_uri() . '/assets/css/project.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/project.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'about-us-style',
+		get_template_directory_uri() . '/assets/css/about_us.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/about_us.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'contact-us-style',
+		get_template_directory_uri() . '/assets/css/contact_us.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/contact_us.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'contact-us-style',
+		get_template_directory_uri() . '/assets/css/client.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/client.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'testimonial-style',
+		get_template_directory_uri() . '/assets/css/testimonial.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/testimonial.css' ),
+		'all'
+	);
+
+	wp_enqueue_style(
+		'faq-style',
+		get_template_directory_uri() . '/assets/css/faq.css',
+		array(),
+		filemtime( get_template_directory() . '/assets/css/faq.css' ),
+		'all'
+	);
+
+	wp_enqueue_script(
+		'jquery-min-js',
+		get_template_directory_uri() . '/js/jquery.min.js',
+		array(),
+		filemtime( get_template_directory() . '/js/jquery.min.js' ),
+		'all'
+	);
+
+	wp_enqueue_script(
+		'slick-min-js',
+		get_template_directory_uri() . '/js/slick.min.js',
+		array(),
+		filemtime( get_template_directory() . '/js/slick.min.js' ),
+		'all'
+	);
+
+	wp_enqueue_script(
+		'testimonial-js',
+		get_template_directory_uri() . '/js/testimonial.js',
+		array(),
+		filemtime( get_template_directory() . '/js/testimonial.js' ),
+		'all'
+	);
+
+	wp_enqueue_script(
+		'faq-js',
+		get_template_directory_uri() . '/js/faq.js',
+		array(),
+		filemtime( get_template_directory() . '/js/faq.js' ),
 		'all'
 	);
 }

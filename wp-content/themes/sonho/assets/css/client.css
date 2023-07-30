@@ -1,0 +1,152 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+/* Fonts Related CSS */
+/* Flex CSS */
+/* padding & Margin CSS */
+/* Button CSS */
+/* Width & Max-width CSS */
+/* Border CSS */
+/* Background CSS */
+/* Element CSS */
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #030303;
+  border: 1px solid #030303;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #030303 !important;
+}
+
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
+.client_section {
+  background-color: #F4F3EF;
+  padding-top: 0;
+  padding-bottom: 100px;
+}
+@media only screen and (max-width: 599px) {
+  .client_section {
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+}
+.client_section .site_content {
+  width: 100%;
+}
+.client_section .site_content .title {
+  margin-bottom: 30px;
+}
+.client_section .client_logo_content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1px 0 0 1px;
+  width: 100%;
+}
+.client_section .client_logo_content .client_logo_box {
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d6d6d6;
+  background-color: #f4f3ef;
+  padding: 15px;
+  margin: -1px 0 0 -1px;
+  height: 182px;
+}
+@media only screen and (max-width: 767px) {
+  .client_section .client_logo_content .client_logo_box {
+    width: 33.33%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .client_section .client_logo_content .client_logo_box {
+    width: 50%;
+    padding: 5px;
+    height: 99px;
+  }
+}
+.client_section .client_logo_content .client_logo_box img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=client.css.map */

@@ -1,0 +1,110 @@
+@use "global";
+
+.project_section {
+	@include global.background($color: #E8E7E0);
+	@include global.padd_mar($pt: 100px, $pb: 100px);
+
+	@media only screen and (max-width: 599px) {
+		@include global.padd_mar($pt: 70px, $pb: 70px);
+	}
+
+	.site_content {
+		@include global.flex;
+		@include global.flex-align($direction: column);
+		@include global.width($width: 100%);
+	}
+
+	.project_details {
+		@include global.flex;
+		@include global.flex-align($gap: 80px, $justify: center);
+		@include global.padd_mar($mt: 30px);
+
+		@media only screen and (max-width: 767px) {
+			@include global.padd_mar($mt: 0px);
+			@include global.flex-align($gap: 40px);
+		}
+
+		.details_row {
+			@include global.flex;
+			@include global.flex-align($gap: 80px 40px);
+
+			@media only screen and (max-width: 767px) {
+				@include global.flex-align($gap: 50px);
+			}
+
+			.details_box {
+				@include global.width($width: 100%, $max-width: calc(50% - 20px));
+
+				@media only screen and (max-width: 767px) {
+					@include global.width($max-width: 100%);
+				}
+				
+				.box_img {
+					@include global.flex;
+				}
+
+				.box_content {
+
+					h3 {
+						@include global.padd_mar($m: 25px 0 16px);
+						@include global.font($size: 23px, $weight: 600, $line-height: 30px);
+
+						@media only screen and (max-width: 599px) {
+							@include global.font($size: 18px);
+						}
+
+					}
+
+					.box_tag {
+						@include global.flex;
+						@include global.flex-align($gap: 8px);
+
+						a {
+							@include global.font($size: 16px, $weight: 400, $line-height: 19px, $color: #030303, $decoration: none);
+							@include global.border($width: 1px, $style: solid, $color: #BBB, $radius: 100px);
+							@include global.background($color: #E8E7E0);
+							@include global.padd_mar($p: 11px 20px);
+
+							@media only screen and (max-width: 599px) {
+								@include global.padd_mar($p: 6px 20px);
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		a.btn {
+			@include global.flex;
+			@include global.flex-align($align: center, $gap: 10px);
+
+			.text {
+				@include global.width($max-width: calc(100% - 31px));
+			}
+
+			.svg_icon {
+				height: 20px;
+			}
+
+			&:hover {
+				.svg_icon{
+					svg {
+						path {
+							fill: #030303;
+						}
+					}
+				}
+			}
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($p: 12px 20px);
+			}
+		}
+	}
+
+}

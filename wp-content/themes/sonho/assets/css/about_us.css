@@ -1,0 +1,213 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+/* Fonts Related CSS */
+/* Flex CSS */
+/* padding & Margin CSS */
+/* Button CSS */
+/* Width & Max-width CSS */
+/* Border CSS */
+/* Background CSS */
+/* Element CSS */
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin-bottom: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #030303;
+  border: 1px solid #030303;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #030303 !important;
+}
+
+.sub_title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #999;
+}
+@media only screen and (max-width: 599px) {
+  .sub_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: #030303;
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    line-height: 31px;
+  }
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #030303;
+}
+
+.content:last-of-type {
+  margin: 0;
+}
+
+.about_section {
+  background-color: #F4F3EF;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media only screen and (max-width: 599px) {
+  .about_section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+.about_section .site_content {
+  text-align: center;
+  width: 100%;
+}
+.about_section .site_content .title {
+  margin-bottom: 45px;
+}
+.about_section .about_us_content_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  width: 100%;
+}
+@media only screen and (max-width: 991px) {
+  .about_section .about_us_content_row {
+    justify-content: center;
+  }
+}
+.about_section .about_us_content_row .about_us_image {
+  width: 100%;
+  max-width: 510px;
+}
+.about_section .about_us_content_row .about_us_image .img_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 991px) {
+  .about_section .about_us_content_row .about_us_image {
+    max-width: 350px;
+  }
+}
+.about_section .about_us_content_row .about_us_content {
+  width: calc(100% - 540px);
+  max-width: 490px;
+}
+@media only screen and (max-width: 991px) {
+  .about_section .about_us_content_row .about_us_content {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about_section .about_us_content_row .about_us_content {
+    text-align: left;
+  }
+}
+.about_section .about_us_content_row .about_us_content p {
+  font-size: 18px;
+  line-height: 23px;
+  color: #030303;
+  margin: 0 0 35px;
+}
+@media only screen and (max-width: 767px) {
+  .about_section .about_us_content_row .about_us_content p {
+    margin: 0 0 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about_section .about_us_content_row .about_us_content a {
+    width: 100%;
+    text-align: center;
+  }
+}
+.about_section .about_us_content_row .about_us_content .about_us_author {
+  margin-top: 92px;
+}
+@media only screen and (max-width: 991px) {
+  .about_section .about_us_content_row .about_us_content .about_us_author {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about_section .about_us_content_row .about_us_content .about_us_author {
+    text-align: left;
+    margin-top: 40px;
+  }
+}
+.about_section .about_us_content_row .about_us_content .about_us_author h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 25px;
+}
+.about_section .about_us_content_row .about_us_content .about_us_author .img_box {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 346px;
+}
+@media only screen and (max-width: 991px) {
+  .about_section .about_us_content_row .about_us_content .about_us_author .img_box {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about_section .about_us_content_row .about_us_content .about_us_author .img_box {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+/*# sourceMappingURL=about_us.css.map */

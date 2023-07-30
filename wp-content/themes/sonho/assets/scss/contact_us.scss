@@ -1,0 +1,150 @@
+@use "global";
+
+.contact_section {
+	@include global.background($color: #F4F3EF);
+	@include global.padd_mar($pb: 100px);
+	overflow: hidden;
+
+	@media only screen and (max-width: 767px) {
+		@include global.padd_mar($pb: 70px);
+	}
+
+	.container {
+		@media only screen and (max-width: 599px) {
+			@include global.padd_mar($p: 0);
+		}
+	}
+
+	.contact_container {
+		@include global.flex;
+		@include global.flex-align($gap: 30px, $justify: space-between, $align: center);
+		@include global.background($image: '/wp-content/themes/sonho/assets/images/contact_us/contact_us.jpg', $repeat: no-repeat, $size: cover, $position: center);
+		@include global.width($width: 100%);
+		@include global.padd_mar($p: 113px 80px 114px);
+
+		@media only screen and (max-width: 1199px) {
+			@include global.padd_mar($p: 70px 15px 70px);
+		}
+
+		@media only screen and (max-width: 991px) {
+			@include global.flex-align($gap: 50px, $direction: column, $justify: center, $align: center);
+		}
+
+		@media only screen and (max-width: 599px) {
+			@include global.background($image: '/wp-content/themes/sonho/assets/images/contact_us/contact_us_mobile.jpg', $position: top right);
+		}
+
+	}
+
+	.contact_text {
+		@include global.width($width: calc(100% - 413px), $max-width: 557px);
+
+		@media only screen and (max-width: 991px) {
+			@include global.width($width: 100%);
+		}
+
+		h2 {
+			@include global.padd_mar($m: 0 0 30px);
+			@include global.font($size: 52px, $color: #fff, $weight: 600, $line-height: 52px);
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				@include global.width($width: 59px);
+				height: 60px;
+				top: -45px;
+				right: 22px;
+				@include global.background($image: '/wp-content/themes/sonho/assets/images/contact_us/star.svg', $repeat: no-repeat, $size: contain, $position: center);
+
+				@media only screen and (max-width: 1199px) {
+					right: -20px;
+				}
+
+				@media only screen and (max-width: 599px) {
+					right: 15px;
+					width: 37px;
+					height: 37px;
+					top: -22px;
+				}
+
+			}
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($m: 0 0 15px);
+				@include global.font($size: 28px, $line-height: 36px);
+			}
+
+		}
+
+		p {
+			@include global.padd_mar($m: 0);
+			@include global.font($size: 18px, $color: #fff, $weight: normal, $line-height: 24px);
+
+			@media only screen and (max-width: 599px) {
+				@include global.font($size: 16px, $line-height: 19px);
+			}
+		}
+
+	}
+
+	.contact_form {
+		@include global.width($width: 100%, $max-width: 383px);
+
+		@media only screen and (max-width: 991px) {
+			@include global.width($max-width: 557px);
+		}
+
+		p {
+			@include global.padd_mar($m: 15px 0 0);
+			@include global.font($size: 16px, $weight: 400, $line-height: 19px, $color: #999999, $align: center);
+
+			@media only screen and (max-width: 599px) {
+				@include global.padd_mar($m: 20px 0 0);
+			}
+		}
+		
+		form {
+			@include global.flex;
+			@include global.flex-align($gap: 10px);
+
+			.form_row {
+				@include global.width($width: 100%);
+
+				input {
+					@include global.background($color: #030303);
+					@include global.border($width: 1px, $style: solid, $color: #999, $radius: 100px);
+					@include global.font($size: 16px, $weight: 400, $line-height: 19px, $color: #fff);
+					@include global.padd_mar($p: 20px 34px);
+					@include global.width($width: 100%);
+
+					&::placeholder {
+						@include global.font($color: #FFFFFF);
+					}
+
+					@media only screen and (max-width: 599px) {
+						@include global.padd_mar($p: 14px 20px);
+					}
+
+				}
+
+				button {
+					@include global.background($color: #2A63E2);
+					@include global.border($width: 1px, $style: solid, $color: #2A63E2, $radius: 100px);
+					@include global.font($color: #fff, $size: 16px, $weight: 500, $line-height: 21px, $align: center);
+					@include global.padd_mar($p: 20px 15px);
+					@include global.width($width: 100%);
+					cursor: pointer;
+
+					@media only screen and (max-width: 599px) {
+						@include global.padd_mar($p: 14px 15px);
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+}
