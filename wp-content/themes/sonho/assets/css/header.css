@@ -218,6 +218,7 @@ header .header_left_part .header_nav ul li.menu-item-has-children ul.sub-menu li
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
+    z-index: 99;
   }
   header .header_left_part .header_nav ul li > a {
     padding-top: 10px;
