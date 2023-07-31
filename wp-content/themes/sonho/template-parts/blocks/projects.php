@@ -51,7 +51,7 @@ $projects = get_posts( $args );
 						$project_cat   = get_the_terms( $project->ID, 'project_category' );
 						$image_id  = get_post_thumbnail_id( $project->ID );
 						$image_arr = wp_get_attachment_image_src( $image_id, 'full' );
-						$image     = $image_arr[0];
+						$image     = ( ! empty( $image_arr ) ) ? $image_arr[0] : get_template_directory_uri() . '/assets/images/default.png';
 						?>
 						<!-- Box Loop -->
 						<div class="details_box">
