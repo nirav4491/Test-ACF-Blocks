@@ -231,10 +231,16 @@ body {
   flex-wrap: wrap;
   gap: 10px;
 }
-.contact_section .contact_form form .form_row {
+.contact_section .contact_form form .form_row,
+.contact_section .contact_form form .wpforms-field-container {
   width: 100%;
 }
-.contact_section .contact_form form .form_row input {
+.contact_section .contact_form form .form_row .wpforms-field,
+.contact_section .contact_form form .wpforms-field-container .wpforms-field {
+  padding: 0;
+}
+.contact_section .contact_form form .form_row input,
+.contact_section .contact_form form .wpforms-field-container input {
   background-color: #030303;
   border-width: 1px;
   border-style: solid;
@@ -246,20 +252,34 @@ body {
   color: #fff;
   padding: 20px 34px;
   width: 100%;
+  max-width: 100%;
+  height: initial;
 }
-.contact_section .contact_form form .form_row input::placeholder {
+.contact_section .contact_form form .form_row input::placeholder,
+.contact_section .contact_form form .wpforms-field-container input::placeholder {
   color: #FFFFFF;
 }
+.contact_section .contact_form form .form_row input:focus,
+.contact_section .contact_form form .wpforms-field-container input:focus {
+  border-color: #fff;
+  box-shadow: none;
+}
 @media only screen and (max-width: 599px) {
-  .contact_section .contact_form form .form_row input {
+  .contact_section .contact_form form .form_row input,
+  .contact_section .contact_form form .wpforms-field-container input {
     padding: 14px 20px;
   }
 }
-.contact_section .contact_form form .form_row button {
-  background-color: #2A63E2;
+.contact_section .contact_form form .wpforms-submit-container {
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+}
+.contact_section .contact_form form .wpforms-submit-container button {
+  background-color: #2A63E2 !important;
   border-width: 1px;
   border-style: solid;
-  border-color: #2A63E2;
+  border-color: #2A63E2 !important;
   border-radius: 100px;
   font-size: 16px;
   font-weight: 500;
@@ -269,9 +289,15 @@ body {
   padding: 20px 15px;
   width: 100%;
   cursor: pointer;
+  opacity: 1 !important;
+  height: initial;
+}
+.contact_section .contact_form form .wpforms-submit-container button:hover {
+  background-color: #2A63E2 !important;
+  background-image: initial;
 }
 @media only screen and (max-width: 599px) {
-  .contact_section .contact_form form .form_row button {
+  .contact_section .contact_form form .wpforms-submit-container button {
     padding: 14px 15px;
   }
 }

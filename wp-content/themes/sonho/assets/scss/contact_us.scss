@@ -108,18 +108,29 @@
 			@include global.flex;
 			@include global.flex-align($gap: 10px);
 
-			.form_row {
+			.form_row,
+			.wpforms-field-container {
 				@include global.width($width: 100%);
+				
+				.wpforms-field {
+					padding: 0;
+				}
 
 				input {
 					@include global.background($color: #030303);
 					@include global.border($width: 1px, $style: solid, $color: #999, $radius: 100px);
 					@include global.font($size: 16px, $weight: 400, $line-height: 19px, $color: #fff);
 					@include global.padd_mar($p: 20px 34px);
-					@include global.width($width: 100%);
+					@include global.width($width: 100%, $max-width: 100%);
+					height: initial;
 
 					&::placeholder {
 						@include global.font($color: #FFFFFF);
+					}
+
+					&:focus {
+						border-color: #fff;
+						box-shadow: none;
 					}
 
 					@media only screen and (max-width: 599px) {
@@ -128,13 +139,27 @@
 
 				}
 
+			}
+
+			.wpforms-submit-container {
+				@include global.width($width: 100%);
+				padding: 0;
+				margin-top: 0;
+
 				button {
-					@include global.background($color: #2A63E2);
-					@include global.border($width: 1px, $style: solid, $color: #2A63E2, $radius: 100px);
+					@include global.background($color: #2A63E2 !important);
+					@include global.border($width: 1px, $style: solid, $color: #2A63E2 !important, $radius: 100px);
 					@include global.font($color: #fff, $size: 16px, $weight: 500, $line-height: 21px, $align: center);
 					@include global.padd_mar($p: 20px 15px);
 					@include global.width($width: 100%);
 					cursor: pointer;
+					opacity: 1 !important;
+					height: initial;
+
+					&:hover {
+						@include global.background($color: #2A63E2 !important);
+						background-image: initial;
+					}
 
 					@media only screen and (max-width: 599px) {
 						@include global.padd_mar($p: 14px 15px);

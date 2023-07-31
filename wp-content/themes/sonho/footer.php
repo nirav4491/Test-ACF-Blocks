@@ -8,18 +8,21 @@
  *
  * @package Sonho
  */
-
+$email = get_field( 'footer_email', 'option' );
 ?>
 
 	<!-- Footer -->
 	<footer>
 		<div class="container">
 			<div class="row">
-
+				<?php
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$image          = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+				?>
 				<!-- Footer Logo -->
 				<div class="footer_logo">
 					<a href="/">
-						<img src="/wp-content/uploads/2023/07/cropped-Group-16.png" alt="logo" />
+						<img src="<?php echo esc_url( $image[0] ); ?>" alt="logo" />
 					</a>
 				</div>
 
@@ -28,87 +31,64 @@
 
 					<!-- Box One -->
 					<div class="nav_box">
-						<h5>Email</h5>
+						<h5><?php echo esc_html( 'Email' ); ?></h5>
 						<ul>
 							<li>
-								<a href="mailto:xxx@example.com">xxx@example.com</a>
+								<a href="mailto:<?php echo esc_url( $email ); ?>"><?php echo esc_html( $email ); ?></a>
 							</li>
 						</ul>
 					</div>
 
 					<!-- Box Two -->
 					<div class="nav_box">
-						<h5>Home</h5>
-						<ul>
-							<li>
-								<a href="#">Projetos</a>
-							</li>
-							<li>
-								<a href="#">Sobre</a>
-							</li>
-							<li>
-								<a href="#">Contacto</a>
-							</li>
-						</ul>
+						<h5><?php echo esc_html( 'Home' ); ?></h5>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-2',
+								'menu_id'        => 'footer-menu-1',
+							)
+						);
+						?>
 					</div>
 
 					<!-- Box Three -->
 					<div class="nav_box">
-						<h5>Branding E Design</h5>
-						<ul>
-							<li>
-								<a href="#">Design de UI/UX</a>
-							</li>
-							<li>
-								<a href="#">Design de Web</a>
-							</li>
-							<li>
-								<a href="#">Branding e Conceitos</a>
-							</li>
-							<li>
-								<a href="#">Auditoria Do Projecto</a>
-							</li>
-						</ul>
+						<h5><?php echo esc_html( 'Branding E Design' ); ?></h5>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-3',
+								'menu_id'        => 'footer-menu-2',
+							)
+						);
+						?>
 					</div>
 
 					<!-- Box Four -->
 					<div class="nav_box two_box">
-						<h5>Desenvolvimento de websites</h5>
-						<ul>
-							<li>
-								<a href="#">WordPress</a>
-							</li>
-
-							<li>
-								<a href="#">Laravel</a>
-							</li>
-
-							<li>
-								<a href="#">Woocommerce</a>
-							</li>
-
-							<li>
-								<a href="#">Shopify</a>
-							</li>
-
-							<li>
-								<a href="#">Webflow</a>
-							</li>
-						</ul>
+						<h5><?php echo esc_html( 'Desenvolvimento de websites' ); ?></h5>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-4',
+								'menu_id'        => 'footer-menu-3',
+							)
+						);
+						?>
 					</div>
 
 					<!-- Box Five -->
 					<div class="nav_box mobile_menu">
-						<h5>Informações legais</h5>
-						<ul>
-							<li>
-								<a href="#">Política de Privacidade</a>
-							</li>
-
-							<li>
-								<a href="#">Termos e Condições</a>
-							</li>
-						</ul>
+						<h5><?php echo esc_html( 'Informações legais' ); ?></h5>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-5',
+								'menu_id'        => 'footer-menu-4',
+							)
+						);
+						?>
 					</div>
 
 				</div>
@@ -119,10 +99,16 @@
 		<section class="copyright">
 			<div class="container">
 				<div class="row">
-
-					<a href="#">Política de Privacidade</a>
-					<a href="#">Termos e Condições</a>
-
+					<div class="nav_box">
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-5',
+								'menu_id'        => 'footer-menu-4',
+							)
+						);
+						?>
+					</div>
 				</div>
 			</div>
 		</section>

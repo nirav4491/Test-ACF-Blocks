@@ -128,6 +128,15 @@ footer {
 		.row {
 			@include global.flex-align($justify: flex-start, $gap: 40px);
 
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				@include global.flex;
+				@include global.flex-align($justify: flex-start, $gap: 40px);
+			}
+
 			a {
 				@include global.width($width: auto);
 				@include global.padd_mar($p: 0, $m:0);

@@ -8,6 +8,10 @@
  * @param   bool $is_preview True during AJAX preview.
  * @param   (int|string) $post_id The post ID this block is saved to.
  */
+
+$title        = ( ! empty( get_field( 'title' ) ))? get_field( 'title' ) : 'Title';
+$subtitle     = ( ! empty( get_field( 'sub_title' ) ) ) ? get_field( 'sub_title' ) : 'Sub Title';
+$testimonials = get_field( 'testinmonials' );
 ?>
 <section class="testimonial_section">
     <div class="container">
@@ -16,8 +20,8 @@
             <div class="site_content">
 
                 <div class="content_box">
-                    <h4 class="sub_title">Avaliações</h4>
-                    <h2 class="title">O que dizem nossos clientes</h2>
+                    <h4 class="sub_title"><?php echo esc_html( $subtitle ); ?></h4>
+                    <h2 class="title"><?php echo esc_html( $title ); ?></h2>
                 </div>
 
                 <div class="content_arrow">
@@ -35,167 +39,50 @@
                     </a>
                 </div>
             </div>
+            <?php
+            if ( ! empty( $testimonials ) ) {
+                ?>
+                <div class="testimonial_slider">
+                    <?php
+                    foreach ( $testimonials as $testimonial ) {
+                        $title            = $testimonial['title'];
+                        $description      = $testimonial['description'];
+                        $author_image_id  = $testimonial['author_image'];
+                        $author_image_arr = wp_get_attachment_image_src( $author_image_id, 'full' );
+                        $author_image     = ( ! empty( $author_image_arr ) ) ? $author_image_arr[0] : get_template_directory_uri() . '/assets/images/default_avtar.jpg';
+                        $author_name      = $testimonial['author_name'];
+                        ?>
+                        <!-- loop -->
+                        <div class="item">
 
-            <div class="testimonial_slider">
+                            <div class="testimonial_box">
+                                
+                                <div class="box_content">
+                                    <h3><?php echo esc_html( $title ); ?></h3>
+                                    <p><?php echo esc_html( $description ); ?></p>
+                                </div>
 
-                <!-- loop -->
-                <div class="item">
+                                <div class="testimonial_details">
 
-                    <div class="testimonial_box">
-                        
-                        <div class="box_content">
-                            <h3>Trabalho concluído como prometido! </h3>
-                            <p>Trabalho concluído como prometido! Além disso, eles me ajudaram a entender o mais claramente possível quais tarefas eram necessárias, o que foi muito útil. Obrigado!!!</p>
-                        </div>
+                                    <div class="details_img">
+                                        <img src="<?php echo esc_url( $author_image ); ?>" alt="jill_feeler" />
+                                    </div>
 
-                        <div class="testimonial_details">
+                                    <div class="details_text">
+                                        <p><?php echo esc_html( $author_name ); ?></p>
+                                    </div>
 
-                            <div class="details_img">
-                                <img src="/wp-content/themes/sonho/assets/images/testimonail/jill_feeler.png" alt="jill_feeler" />
+                                </div>
+
                             </div>
-
-                            <div class="details_text">
-                                <p>Jill Feeler</p>
-                            </div>
-
                         </div>
-
-                    </div>
-
+                        <?php
+                    }
+                    ?>
                 </div>
-
-                <!-- loop -->
-                <div class="item">
-
-                    <div class="testimonial_box">
-                        
-                        <div class="box_content">
-                            <h3>All members of the team communicated quickly and clearly...</h3>
-                            <p>Todos os membros da equipe comunicaram de forma rápida e clara. Foi ótimo trabalhar com eles e eles completaram meu projeto rapidamente. Eu os contratarei novamente quando necessário.</p>
-                        </div>
-
-                        <div class="testimonial_details">
-
-                            <div class="details_img">
-                                <img src="/wp-content/themes/sonho/assets/images/testimonail/christine_grene.png" alt="christine_grene" />
-                            </div>
-
-                            <div class="details_text">
-                                <p>Christine Green</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- loop -->
-                <div class="item">
-
-                    <div class="testimonial_box">
-                        
-                        <div class="box_content">
-                            <h3>Trabalho concluído como prometido! </h3>
-                            <p>Trabalho concluído como prometido! Além disso, eles me ajudaram a entender o mais claramente possível quais tarefas eram necessárias, o que foi muito útil. Obrigado!!!</p>
-                        </div>
-
-                        <div class="testimonial_details">
-
-                            <div class="details_img">
-                                <img src="/wp-content/themes/sonho/assets/images/testimonail/jill_feeler.png" alt="jill_feeler" />
-                            </div>
-
-                            <div class="details_text">
-                                <p>Jill Feeler</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- loop -->
-                <div class="item">
-
-                    <div class="testimonial_box">
-                        
-                        <div class="box_content">
-                            <h3>All members of the team communicated quickly and clearly...</h3>
-                            <p>Todos os membros da equipe comunicaram de forma rápida e clara. Foi ótimo trabalhar com eles e eles completaram meu projeto rapidamente. Eu os contratarei novamente quando necessário.</p>
-                        </div>
-
-                        <div class="testimonial_details">
-
-                            <div class="details_img">
-                                <img src="/wp-content/themes/sonho/assets/images/testimonail/christine_grene.png" alt="christine_grene" />
-                            </div>
-
-                            <div class="details_text">
-                                <p>Christine Green</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- loop -->
-                <div class="item">
-
-                    <div class="testimonial_box">
-                        
-                        <div class="box_content">
-                            <h3>Trabalho concluído como prometido! </h3>
-                            <p>Trabalho concluído como prometido! Além disso, eles me ajudaram a entender o mais claramente possível quais tarefas eram necessárias, o que foi muito útil. Obrigado!!!</p>
-                        </div>
-
-                        <div class="testimonial_details">
-
-                            <div class="details_img">
-                                <img src="/wp-content/themes/sonho/assets/images/testimonail/jill_feeler.png" alt="jill_feeler" />
-                            </div>
-
-                            <div class="details_text">
-                                <p>Jill Feeler</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- loop -->
-                <div class="item">
-
-                    <div class="testimonial_box">
-                        
-                        <div class="box_content">
-                            <h3>All members of the team communicated quickly and clearly...</h3>
-                            <p>Todos os membros da equipe comunicaram de forma rápida e clara. Foi ótimo trabalhar com eles e eles completaram meu projeto rapidamente. Eu os contratarei novamente quando necessário.</p>
-                        </div>
-
-                        <div class="testimonial_details">
-
-                            <div class="details_img">
-                                <img src="/wp-content/themes/sonho/assets/images/testimonail/christine_grene.png" alt="christine_grene" />
-                            </div>
-
-                            <div class="details_text">
-                                <p>Christine Green</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>

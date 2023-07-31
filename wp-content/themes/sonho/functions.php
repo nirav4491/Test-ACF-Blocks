@@ -50,6 +50,10 @@ function sonho_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'sonho' ),
+			'menu-2' => esc_html__( 'Footer Menu 1', 'sonho' ),
+			'menu-3' => esc_html__( 'Footer Menu 2', 'sonho' ),
+			'menu-4' => esc_html__( 'Footer Menu 3', 'sonho' ),
+			'menu-5' => esc_html__( 'Footer Menu 4', 'sonho' ),
 		)
 	);
 
@@ -411,6 +415,14 @@ function sonho_register_blocks() {
 				}
 			)
 		);
+
+		$option_page = acf_add_options_page(array(
+            'page_title'    => __('Sonho General Settings'),
+            'menu_title'    => __('Sonho General Settings'),
+            'menu_slug'     => 'sonho-general-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
 	}
 }
 

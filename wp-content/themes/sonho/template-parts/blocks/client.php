@@ -8,6 +8,9 @@
  * @param   (int|string) $post_id The post ID this block is saved to.
  */
 
+$title    = ( ! empty( get_field( 'title' ) ))? get_field( 'title' ) : 'Title';
+$subtitle = ( ! empty( get_field( 'sub_title' ) ) ) ? get_field( 'sub_title' ) : 'Sub Title';
+$clients  = get_field( 'clients' );
 ?>
 <!-- Client Section -->
 <section class="client_section">
@@ -15,47 +18,30 @@
 		<div class="row">
 
 			<div class="site_content">
-				<h4 class="sub_title">Clientes</h4>
-				<h2 class="title">Parceiros</h2>
+				<h4 class="sub_title"><?php echo esc_html( $subtitle ); ?></h4>
+				<h2 class="title"><?php echo esc_html( $title ); ?></h2>
 			</div>
-
-			<!-- Client Logo -->
-			<div class="client_logo_content">
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/European_Bank.png" alt="client_logo_1" />
+			<?php
+			if ( ! empty( $clients ) ) {
+				?>
+				<!-- Client Logo -->
+				<div class="client_logo_content">
+					<?php
+					foreach ( $clients as $client ) {
+						$client_image_id  = $client['image'];
+						$client_image_arr = wp_get_attachment_image_src( $client_image_id, 'full' );
+						$client_image     = $client_image_arr[0];
+						?>
+						<div class="client_logo_box">
+							<img src="<?php echo esc_url( $client_image ); ?>" alt="client_logo_1" />
+						</div>
+						<?php
+					}
+					?>
 				</div>
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/CA_logo.png" alt="client_logo_1" />
-				</div>
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/small_giants.png" alt="client_logo_1" />
-				</div>
-				
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/Juul_logo.png" alt="client_logo_1" />
-				</div>
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/privatundervisningen.png" alt="client_logo_1" />
-				</div>
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/parachute_logo.png" alt="client_logo_1" />
-				</div>
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/Capital_logo.png" alt="client_logo_1" />
-				</div>
-
-				<div class="client_logo_box">
-					<img src="/wp-content/themes/sonho/assets/images/client_logo/Synlighet_logo.png" alt="client_logo_1" />
-				</div>
-
-			</div>
-
+				<?php
+			}
+			?>
 		</div>
 	</div>
 </section>
